@@ -9,11 +9,11 @@ pre[class*="language-diff-"] {
 }
 .token.deleted {
 	background-color: hsl(0, 51%, 37%);
-	color: inherit;
+	color: #fff;
 }
 .token.inserted {
 	background-color: hsl(126, 31%, 39%);
-	color: inherit;
+	color: #fff;
 }
 
 /* Make the + and - characters unselectable for copy/paste */

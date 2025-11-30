@@ -1,18 +1,23 @@
 /* Message Box */
 .message-box {
-	--color-message-box: #ffc;
+	--color-message-box: var(--color-gray-10);
 
 	display: block;
 	background-color: var(--color-message-box);
-	color: var(--color-gray-90);
-	padding: 1em 0.625em; /* 16px 10px /16 */
+	color: var(--text-color);
+	padding: var(--spacing-md);
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	margin-bottom: var(--spacing-lg);
 }
+
 .message-box ol {
 	margin-top: 0;
+	padding-left: var(--spacing-lg);
 }
 
 @media (prefers-color-scheme: dark) {
 	.message-box {
-		--color-message-box: #082840;
+		--color-message-box: #25282c;
 	}
 }

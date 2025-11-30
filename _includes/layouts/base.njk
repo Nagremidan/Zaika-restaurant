@@ -36,25 +36,35 @@
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+		<div class="site-wrapper">
+			<header class="site-header">
+				<div class="container">
+					<a href="/" class="home-link">{{ metadata.title }}</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+					{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+					<nav>
+						<h2 class="visually-hidden">Top level navigation menu</h2>
+						<ul class="nav">
+						{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+						{%- endfor %}
+						</ul>
+					</nav>
+				</div>
+			</header>
 
-		<main id="skip">
-			{{ content | safe }}
-		</main>
+			<main id="skip" class="site-main">
+				<div class="container">
+					{{ content | safe }}
+				</div>
+			</main>
 
-		<footer></footer>
+			<footer class="site-footer">
+				<div class="container">
+					<p>&copy; {% if metadata.author.name %}{{ metadata.author.name }}{% else %}Eleventy Base Blog{% endif %}. Built with <a href="https://www.11ty.dev/">11ty</a>.</p>
+				</div>
+			</footer>
+		</div>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
